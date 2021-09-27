@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load humanize %}
+<div class="container">
+  <div class="row">  
+      <div class="col-md-12 text-center">
+          <div class="col-md-12 py-4">
+              <div class="lc-block mb-3"><span editable="inline" class="text-uppercase text-info"><b>Stay ahead of the market</b></span>
+                  <h2 editable="inline" class="display-4 mt-2 text-primary" style="letter-spacing: -2px;"><b>Ratings & Price Targets</b></h2>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+<table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Rating Mid-term</th>
+        <th scope="col">Rating Long-term</th>
+        <th scope="col">Price Target</th>
+        <th scope="col">Status</th>
+        <th scope="col">Updated</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{post.symbol.title}}</td>
+        <td>{{post.price_when_issued.normalize|intcomma}}</td>
+        <td>{{post.status_mt}}</td>
+        <td>{{post.status_lt}}</td>
+        
+        <td>{{post.target_price_lt.normalize|intcomma}}</td>
+       
+        <td>{{post.status_changed_to}}</td>
+        <td>{{post.status_updated_at}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<footer class="card-footer fixed-bottom">
+{% include 'inc/_footer.html' %}
+</footer>
+  {% endblock %}
+  

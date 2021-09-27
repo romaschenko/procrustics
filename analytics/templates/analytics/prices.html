@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<div class="col-md-12 py-4">
+				<div class="lc-block mb-3"><span editable="inline" class="text-uppercase text-info"><b>Start your journey toward successful trading</b></span>
+					<h2 editable="inline" class="display-4 mt-2 text-primary" style="letter-spacing: -2px;"><b>Services & Prices</b></h2>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="text-center col-md-3 py-4 shadow-sm">
+			<div class="lc-block">
+				<div editable="rich">
+
+					<h2><strong>Asset Management</strong></h2>
+
+					<p><em>Minimum investment amounts is $100K</em></p>
+				</div>
+			</div>
+			<div class="lc-block">
+				<div editable="rich">
+
+					<h2 class="display-3">50%</h2>
+					<p>commission</p>
+				</div>
+			</div>
+			<div class="lc-block px-4 mb-4">
+				<div editable="rich">
+
+					<p>&nbsp;Provide us with your trading API key and we do the rest. <p class="text-info"><strong>It's safest way for assets managemant - Trading API key is does not allow access to digital asset withdrawals</strong></p>
+				</div>
+			</div>
+<!-- /lc-block -->
+		</div><!-- /col -->
+		<div class="text-center col-md-4 offset-md-1 pb-4 pt-2 shadow-lg">
+			<div class="lc-block text-end pb-2  "><span class="badge bg-dark" editable="inline">Popular</span></div>
+
+
+			<div class="lc-block">
+				<div editable="rich">
+
+					<h2><strong>Trading Alerts</strong></h2>
+
+					<p><em>Subscription</em></p>
+				</div>
+			</div>
+			<div class="lc-block">
+				<div editable="rich">
+
+					<h2 class="display-3">$590</h2>
+					<p>/month</p>
+				</div>
+			</div>
+			<div class="lc-block px-4 mb-4">
+				<div editable="rich">
+
+					<p>&nbsp;1-3 alerts per day via Telegram Messenger. Win-rate above 50% garanteed</p><p class="text-info"><strong>Risk free. If for any reason you’re not satisfied with your subscription, simply contact us during your first 30 days and we’ll refund your money, no questions asked</strong></p>
+				</div>
+			</div>
+<!-- /lc-block -->
+		</div><!-- /col -->
+		<div class="text-center col-md-3 offset-md-1 py-4 shadow-sm">
+			<div class="lc-block">
+				<div editable="rich">
+
+					<h2><strong>Consulting</strong></h2>
+
+					<p><em>For blockchain projects</em></p>
+				</div>
+			</div>
+			<div class="lc-block">
+				<div editable="rich">
+
+					<h2 class="display-3">$275</h2>
+					<p>/hour</p>
+				</div>
+			</div>
+			<div class="lc-block px-4 mb-4">
+				<div editable="rich">
+					<p>We are among in TOP-5 Blockchain projects advisers rated by  ICOholder.com</p>
+					<p class="text-info"><strong>We accept payment by your project's tokens. Because we are fully confident - with our help your project will succeed!</strong></strong></p>
+				</div>
+			</div>
+<!-- /lc-block -->
+		</div><!-- /col -->
+	</div>
+	
+</div>
+<br>
+<div class="container">
+	<div class="row py-5">
+		<div class="col align-self-center text-center">
+			<div class="lc-block">
+				<div editable="rich">
+
+					<h2 class="text-danger">Pay with CAVO tokens and save 20%</h2>
+					<br>
+					<p><a href="{% url 'tokens' %}">Lern more about CAVO tokens....</a></p>
+				</div>
+			</div><!-- /lc-block -->
+		</div><!-- /col -->
+		
+	</div>
+</div>
+
+<footer class="card-footer">
+    {% include 'inc/_footer.html' %}
+</footer>
+
+{% endblock %}

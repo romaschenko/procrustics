@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<style>
+    .carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+</style>
+    <!--Seeing the Bigger Picture-->
+<div class="container mt-4">
+
+
+        <!-- /lc-block -->
+
+    <div class="row p-0 pb-0 pe-lg-0 pt-lg-0 align-items-center rounded-3 ">
+
+        <div class="container">
+            <div class="row">  
+                <div class="col-md-12 text-center">
+                    <div class="col-md-12 py-4">
+                        <div class="lc-block mb-3"><span editable="inline" class="text-uppercase text-info"><b>Seeing the Bigger Picture</b></span>
+                            <h2 editable="inline" class="display-4 mt-2 text-primary" style="letter-spacing: -2px;"><b>Latest Investment Ideas</b></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="height: 100px; container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8">
+                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for post in posts|slice:":5" %}
+                                    {% if forloop.first %}
+                                        <div class="carousel-item active">
+                                    {% else %}
+                                        <div class="carousel-item">
+                                    {% endif %}
+                                        
+                                            <a href="{{post.get_absolute_url}}"><img class="img-fluid"  src="{{post.slide.url}}" alt=""></a>
+
+                                        </div>
+                                {% endfor %}
+                            </div> <!--end of carousel cards-->                                
+                            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div><!--end of all carousel elements -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4 py-4 text-center">
+                <div class="lc-block mb-3">
+                    <a href="{% url 'analyses' %}">More trading and investment ideas....</a>
+                    
+            
+                </div>
+                
+            </div> 
+        </div> 
+    </div>      
+    <hr/>
+    
+<!--начало фич -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="col-md-12">
+                        <div class="lc-block mb-0"><span editable="inline" class="text-uppercase text-danger"><b>Browse Our Expertise</b></span>
+                            <h2 editable="inline" class="display-4 mt-2 text-primary" style="letter-spacing: -2px;"><b>Find Your Solution</b></h2>
+                            
+                        </div>
+
+                    <!-- /lc-block -->
+                    </div>
+                </div>
+            <div class="row pt-4 pb-0 g-0">
+                <div class="col-md-4 text-center">
+                    <div class="lc-block p-4">
+                        <div>
+                            <svg id="i-bell" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <path d="M8 17 C8 12 9 6 16 6 23 6 24 12 24 17 24 22 27 25 27 25 L5 25 C5 25 8 22 8 17 Z M20 25 C20 25 20 29 16 29 12 29 12 25 12 25 M16 3 L16 6" />
+                            </svg>
+
+                            <h5 class="mb-4 mt-3" editable="inline">
+                                <strong>Trading Alerts</strong>
+                            </h5>
+                        </div>
+                        <div editable="rich">
+                            <p>You never need miss out on market movements&nbsp;</p>
+                        </div>
+                    </div>
+                    <!-- /lc-block -->
+                </div>
+                <div class="col-md-4 text-center shadow">
+                    <div class="lc-block p-4">
+                        <div>
+                            <svg id="i-portfolio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <path d="M29 17 L29 28 3 28 3 17 M2 8 L30 8 30 16 C30 16 24 20 16 20 8 20 2 16 2 16 L2 8 Z M16 22 L16 18 M20 8 C20 8 20 4 16 4 12 4 12 8 12 8" />
+                            </svg>
+                            <h5 class="mb-4 mt-3" editable="inline">
+                                <strong>Asset Management</strong>
+                            </h5>
+                        </div>
+                        <div editable="rich">
+                            <p>All our trading decisions are backed up by strong technical analysis&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="lc-block p-4">
+                        <div>
+                            <svg id="i-msg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                <path d="M2 4 L30 4 30 22 16 22 8 29 8 22 2 22 Z" />
+                            </svg>
+                            <h5 class="mb-4 mt-3" editable="inline">
+                                
+                                <strong>Strategic Advisory</strong>
+                            </h5>
+                        </div>
+                        <div editable="rich">
+                            <p>Consulting at all stages of blockchain project &nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+     <!-- Конец фич -->     
+     <hr/>
+ <!----ntcnbhetv-->    
+
+ <div class="container">
+	<div class="row mb-2">
+		<div class="col-md-12 text-center">
+			<div class="lc-block">
+			
+			
+                <div class="lc-block mb-0"><span editable="inline" class="text-uppercase text-info"><b>Why choose us?</b></span>
+                <h2 editable="inline" class="display-4 mt-2 text-primary" style="letter-spacing: -2px;"><b>Because We’re the Best!</b></h2>
+				<p editable="inline"> Most of our technical analyses published on TradingView. <br> Once it's published it can't be edited or deleted.<br>So it's easy to track our perfomance</p>
+			</div><!-- /lc-block -->
+		</div>
+	</div>
+	<div class="row counters">
+		<div class="col-md-4 text-center">
+			<div class="lc-block p-4"><span class="display-4" editable="inline"><b>>1000</b></span>
+				<div editable="rich">Higly accurate technical analyses</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 text-center shadow">
+			<div class="lc-block p-4">
+				<span class="display-4" editable="inline"><b>7</b></span>
+				<div editable="rich">
+					<p>Successful years on market</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4 text-center">
+			<div class="lc-block p-4">
+				<span class="display-4" editable="inline"><b>>100K</b></span>
+				<div editable="rich">Subscribers on TradingView platform</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<br>
+<!----ntcnbhetv-->
+        
+    
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</div> <!-- Конец контейнера -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="card-footer">
+    {% include 'inc/_footer.html' %}
+</footer>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% load market_tags %}
+
+<div class="list-group list-group-flush">
+    {% get_markets as markets%}
+    
+    {% for market in markets %}
+    <a href="{{market.get_absolute_url}}" class="list-group-item list-group-item-action">{{market.title}}</a>
+    {%endfor%}
+   
+</div>
